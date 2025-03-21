@@ -1,0 +1,10 @@
+import math
+import datetime
+
+def calculate_square_root(number):
+    return math.sqrt(number)
+
+def display_current_datetime():
+    return datetime.now()
+
+
