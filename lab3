@@ -1,0 +1,28 @@
+def read_file(filename, mode='all'):
+    try:
+        if mode == 'all':
+            with open(filename, 'r') as file:
+                content = file.read()
+                print(content)
+        elif mode == 'line':
+            with open(filename, 'r') as file:
+                for line in file:
+                    print(line.strip())
+    except FileNotFoundError:
+        print("Файл не найден.")
+
+def write_to_file(filename):
+    user_input = input("Введите текст для записи в файл: ")
+    with open(filename, 'w') as file:
+        file.write(user_input)
+
+def append_to_file(filename):
+    user_input = input("Введите текст для добавления в файл: ")
+    with open(filename, 'a') as file:
+        file.write(user_input)
+
+
+write_to_file('user_input.txt')
+append_to_file('user_input.txt')
+read_file('example.txt', mode='all')
+read_file('example.txt', mode='line')
